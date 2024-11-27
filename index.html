@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Custom PC builds tailored to your needs. Get a high-performance PC designed for gaming, workstations, or budget-friendly options with a personal touch!">
+    <meta name="keywords" content="custom PC builds, gaming PC, workstation, budget PC, custom anime designs, high-performance computers">
+
     <title>Custom PC Builds</title>
     <style>
         /* Basic Styling */
@@ -52,8 +55,7 @@
             margin: 10px 0 0;
         }
         .container {
-            width: 90%;
-            max-width: 800px;
+            width: 80%;
             margin: 40px auto;
             background-color: #333;
             padding: 20px;
@@ -77,6 +79,10 @@
         }
         .build:last-child {
             border-bottom: none;
+        }
+        .build img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
         }
         .specs {
             font-size: 0.9em;
@@ -145,6 +151,78 @@
             font-size: 0.9em;
             resize: vertical; /* Allows user to expand if needed */
         }
+        .personal-touch, .contact-info {
+                margin-top: 40px;
+                padding: 20px;
+            }
+        .testimonials {
+            text-align: center;
+            margin: 50px auto;
+            max-width: 600px;
+            position: relative;
+            color: #333; /* Base text color */
+        }
+
+        .testimonial-carousel {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .testimonial-slide {
+            display: none;
+            padding: 30px;
+            background: #f9f9fc; /* Subtle off-white background */
+            border: 2px solid #e0e0e5; /* Light border for definition */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Softer shadow */
+            font-style: italic;
+            font-size: 1.2em;
+            line-height: 1.5;
+            color: #555; /* Softer dark grey for text */
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .testimonial-slide.active {
+            display: block;
+            opacity: 1;
+            transform: scale(1.03); /* Slight zoom effect */
+            border-color: #c5c5d0; /* Highlighted border color for active slide */
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #fff; /* Clean white background for buttons */
+            border: 2px solid #ccc;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #333; /* Button text color */
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-button:hover {
+            background: #e8e8eb; /* Matches the site’s light grey accents */
+        }
+
+        .carousel-button.prev {
+            left: -50px;
+        }
+
+        .carousel-button.next {
+            right: -50px;
+        }
+
+        /* Mobile adjustments for better usability */
+        @media (max-width: 768px) {
+            .carousel-button {
+                left: 10px;
+                right: 10px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -160,8 +238,9 @@
             <div class="build">
                 <div>
                     <h3>Gaming Beast</h3>
-                    <img src="anthony-roberts-FtP3ZM6hmNM-unsplash.jpg" alt="Gaming PC" style="width: 50%; border-radius: 8px; margin-top: 10px; margin-right: 10px;">
+                    <img src="anthony-roberts-FtP3ZM6hmNM-unsplash.jpg" alt="Gaming PC" style="width: 50%; border-radius: 8px;">
                     <p class="specs">AMD Ryzen 9, 32GB RAM, NVIDIA RTX 3080, 1TB SSD</p>
+                    <p class="features">Perfect for 4K gaming, live streaming, and VR experiences.</p>
                 </div>
                 <button class="customize-button" onclick="location.href='mailto:hitmeup@austinmiller.net?subject=Gaming Beast Customization Inquiry'">Customize</button>
             </div>
@@ -268,8 +347,59 @@
                 <h2>Make It Personal</h2>
                 <p>If you have a favorite anime character (or any character you love), let me know! I'll add a custom design to your case with a stencil, paint, or whatever medium suits it best. This is my way of making your build truly one-of-a-kind!</p>
                 <p></p>
-            <!-- Insert your PayPal button code here -->
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        </section>
+        
+        <section id="testimonials" class="testimonials">
+            <h2>What Our (Fake) Customers Say</h2>
+            <h2 style="font-size: small;">We don't have real ones yet..I'd love to add yours though!</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-slide active">
+                    <p>"The Gaming Beast build exceeded my expectations! I can stream and game at 4K with no issues."</p>
+                    <p>- Alex G.</p>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"Austin customized my PC exactly how I wanted it. Great communication and quality work!"</p>
+                    <p>- Jamie L.</p>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"This was my first custom PC, and the whole process was smooth and straightforward. Highly recommend!"</p>
+                    <p>- Sam P.</p>
+                </div>
+            </div>
+            <button class="carousel-button prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="carousel-button next" onclick="changeSlide(1)">&#10095;</button>
+        </section>
+
+        
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <p>Questions? Email me directly at <a href="mailto:hitmeup@austinmiller.net">hitmeup@austinmiller.net</a></p>
+        </div>
+
+        <section class="faq">
+            <h2>You may have questions:</h2>
+            <div>
+                <h3>Why should I buy a build from <i>you</i>?</h3>
+                <p>Electronics lose value quickly. To keep things cheapest and transparent, the parts are bought individually for each build! That said, once payment is received, most builds are completed within 7–10 business days. We will be in contact throughout the process, so I'll keep you posted.</p>
+            </div>
+            <div>
+                <h3>How long does it take to build my PC?</h3>
+                <p>Electronics lose value quickly. To keep things cheapest and transparent, the parts are bought individually for each build! That said, once payment is received, most builds are completed within 7–10 business days. We will be in contact throughout the process, so I'll keep you posted.</p>
+            </div>
+            <div>
+                <h3>Can I request a specific part or brand?</h3>
+                <p>Abso-fucking-lutely! Just include your preferences in the notes section when submitting your build request.</p>
+            </div>
+        </section>
+        
+        <!-- Personal Touch Section -->
+        <div class="personal-touch">
+            <p>Your payment will be processed securely via PayPal. Once completed, I'll confirm your order and provide updates as I work on your build.</p>
+            <p>Please do not use this button unless you are ready to pay me!</p>
+        </div>
+
+        <!-- Insert your PayPal button code here -->
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="padding-left: 35%;">
                 <input type="hidden" name="cmd" value="_s-xclick" />
                 <input type="hidden" name="hosted_button_id" value="T4E3PCFWPSJ8W" />
                 <table>
@@ -287,25 +417,19 @@
                 </table>
                 <input type="hidden" name="currency_code" value="USD" />
                 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
-              </form>
-        </section>
-        
-        <!-- Personal Touch Section -->
-        <div class="personal-touch">
-            <p>Please note, the PayPal button above IS working and will send money to me. Please do not use it unless you are ready to pay me. Cheers!</p>
-        </div>
-        
-        <!-- Contact Information -->
-        <div class="contact-info">
-            <p>Questions? Email me directly at <a href="mailto:hitmeup@austinmiller.net">hitmeup@austinmiller.net</a></p>
-        </div>
-        
-        <style>
-            .personal-touch, .contact-info {
-                margin-top: 40px;
-                padding: 20px;
-            }
-        </style>        
+              </form>        
     </div>
+
+    <script type="text/javascript">
+        let currentSlide = 0;
+
+        function changeSlide(direction) {
+            const slides = document.querySelectorAll('.testimonial-slide');
+            slides[currentSlide].classList.remove('active');
+
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+    </script>
 </body>
 </html>
