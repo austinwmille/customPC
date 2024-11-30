@@ -1,0 +1,396 @@
+/* Global Styles */
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #2a2a2a;
+    color: #ddd;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+header {
+    background-color: #333;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header h1 {
+    color: #ffb347;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Subtle shadow for contrast */
+}
+
+header p {
+    color: #cccccc; /* Light gray to complement the header */
+}
+
+/* Enhanced Header Styling */
+header.custom {
+    position: relative;
+    background-size: cover;
+    background-position: center top; /* Adjust alignment as needed */
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header.custom.no-bg {
+    background-color: #333; /* Default color for no image */
+}
+
+header.custom::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Overlay for readability */
+}
+
+header.custom.no-bg::before {
+    display: none; /* Remove overlay if no background image */
+}
+
+header.custom h1, header.custom p {
+    position: relative;
+    z-index: 1;
+    color: #ffb347;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Shadow for contrast */
+}
+
+header.custom h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+header.custom p {
+    font-size: 1.2em;
+    margin: 10px 0 0;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.1em; /* Slightly larger text */
+    color: #cccccc; /* Softer gray for better visibility */
+}
+
+/* Anchor Links */
+a {
+    color: #ffb347;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background-color: #444;
+    color: #ddd;
+    font-size: 0.9em;
+}
+
+select:focus, textarea:focus {
+    outline: none;
+    border-color: #ffb347;
+}
+
+
+/* Buttons */
+.link-button {
+    background-color: #444; /* Match navbar hover background */
+    color: #ffffff; /* White text */
+    padding: 15px 30px;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.link-button:hover {
+    background-color: #ff9b29; /* Bright orange hover */
+    color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Pop effect */
+}
+
+
+button img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Add spacing between buttons */
+    flex-wrap: wrap; /* Wrap buttons if screen is too small */
+    margin-top: 20px;
+}
+
+/* Specific Layout Styles */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Product Categories */
+.product-category h2 {
+    color: #ffcc66;
+}
+
+.product {
+    margin: 10px 0;
+}
+
+/* Testimonial Styling */
+.testimonials {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 600px;
+    position: relative;
+    color: #333; /* Base text color */
+}
+
+.testimonials h2 {
+    color: #ffb347; /* Bright orange for emphasis */
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.testimonial-carousel {
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonial-slide {
+    display: none;
+    padding: 30px;
+    background: #f9f9fc; /* Subtle off-white background */
+    border: 2px solid #e0e0e5; /* Light border for definition */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Softer shadow */
+    font-style: italic;
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #555; /* Softer dark grey for text */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.testimonial-slide.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1.03); /* Slight zoom effect */
+    border-color: #c5c5d0; /* Highlighted border color for active slide */
+}
+
+/* Testimonials Navigation Buttons */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff; /* Clean white background for buttons */
+    border: 2px solid #ccc;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #333; /* Button text color */
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button:hover {
+    background: #e8e8eb; /* Matches the site’s light grey accents */
+}
+
+.carousel-button.prev {
+    left: -50px;
+}
+
+.carousel-button.next {
+    right: -50px;
+}
+
+@media (max-width: 768px) {
+    .carousel-button {
+        left: 10px;
+        right: 10px;
+    }
+}
+
+.build {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #555;
+    padding: 20px 0;
+}
+
+.build:last-child {
+    border-bottom: none;
+}
+
+.build img {
+    max-width: 50%;
+    border-radius: 8px;
+}
+
+.build img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+#estimatedPrice {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #ffb347;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .build {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .build img {
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+
+    header.custom {
+        padding: 50px 20px;
+    }
+
+    header.custom h1 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar a {
+        display: block;
+        margin: 10px 0; /* Stacks links vertically */
+        padding: 10px 15px; /* Adjust padding for touch-friendliness */
+    }
+}
+
+.testimonial-slide {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.testimonial-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.navbar {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar a {
+    color: #cccccc; /* Light gray for default text */
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffb347; /* Orange on hover */
+    background-color: #444; /* Darker background for hover */
+    padding: 10px 20px; /* Enlarges button on hover */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(255, 155, 41, 0.6); /* Slight glow */
+    transform: scale(1.1);
+}
+
+.easy-pc-orders {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #333;
+    color: #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+.easy-pc-orders h2 {
+    color: #ffb347;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.easy-pc-orders p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.price-tiers {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tier {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    width: 180px;
+    text-align: center;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.tier h3 {
+    color: #ffcc66;
+    margin-bottom: 10px;
+}
+
+.tier p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.tier-button {
+    background-color: #6c757d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.tier-button:hover {
+    background-color: #ff9b29;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}

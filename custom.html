@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Custom PC builds tailored to your needs. Get a high-performance PC designed for gaming, workstations, or budget-friendly options with a personal touch!">
+    <meta name="keywords" content="custom PC builds, gaming PC, workstation, budget PC, custom anime designs, high-performance computers">
+
+    <title>Custom PC Builds</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="custom.html">Custom PCs</a>
+        <a href="recommended.html">Recommended Builds</a>
+        <a href="peripherals.html">Peripherals</a>
+        <a href="questions.html">Questions?</a>
+    </nav>
+
+    <header class="custom" style="background-image: url('images/room2.jpg');">
+        <h1>Custom PC Builds</h1>
+        <p>High-performance, personally hand-built PCs; cheaper than a corporation or resaler.</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Interactive Customization Section -->
+        <section class="customization">
+            <h2>Build Your Own PC</h2>
+            <p>Select your preferred components:</p>
+            <form action="mailto:hitmeup@austinmiller.net" method="post" enctype="text/plain" oninput="updatePrice()">
+                
+                <!-- CPU Dropdown -->
+                <label for="cpu">CPU:</label>
+                <select id="cpu" name="cpu">
+                    <option value="Intel i5" data-price="150">Intel i5 - $150</option>
+                    <option value="Intel i7" data-price="250">Intel i7 - $250</option>
+                    <option value="AMD Ryzen 5" data-price="180">AMD Ryzen 5 - $180</option>
+                    <option value="AMD Ryzen 7" data-price="280">AMD Ryzen 7 - $280</option>
+                    <option value="AMD Ryzen 9" data-price="400">AMD Ryzen 9 - $400</option>
+                </select>
+        
+                <!-- RAM Dropdown -->
+                <label for="ram">RAM:</label>
+                <select id="ram" name="ram">
+                    <option value="16GB" data-price="60">16GB - $60</option>
+                    <option value="32GB" data-price="120">32GB - $120</option>
+                    <option value="64GB" data-price="200">64GB - $200</option>
+                </select>
+        
+                <!-- Graphics Card Dropdown -->
+                <label for="gpu">Graphics Card:</label>
+                <select id="gpu" name="gpu">
+                    <option value="NVIDIA GTX 1660" data-price="250">NVIDIA GTX 1660 - $250</option>
+                    <option value="NVIDIA RTX 3060" data-price="350">NVIDIA RTX 3060 - $350</option>
+                    <option value="NVIDIA RTX 3080" data-price="700">NVIDIA RTX 3080 - $700</option>
+                </select>
+        
+                <!-- Storage Dropdown -->
+                <label for="storage">Storage:</label>
+                <select id="storage" name="storage">
+                    <option value="512GB SSD" data-price="50">512GB SSD - $50</option>
+                    <option value="1TB SSD" data-price="100">1TB SSD - $100</option>
+                    <option value="2TB SSD" data-price="180">2TB SSD - $180</option>
+                </select>
+        
+                <!-- Case Dropdown -->
+                <label for="case">Case and Color:</label>
+                <select id="case" name="case">
+                    <option value="Black Mid-Tower" data-price="70">Black Mid-Tower - $70</option>
+                    <option value="White Mid-Tower" data-price="80">White Mid-Tower - $80</option>
+                    <option value="RGB Glass Case" data-price="120">RGB Glass Case - $120</option>
+                    <option value="Minimalistic Black" data-price="90">Minimalistic Black - $90</option>
+                    <option value="Sleek Silver" data-price="100">Sleek Silver - $100</option>
+                </select>
+        
+                <!-- Estimated Price Display -->
+                <div style="margin-top: 20px; font-weight: bold; font-size: 1.2em; color: #ffb347;">
+                    Estimated MAX Price: $<span id="estimatedPrice">0</span>
+                </div>
+        
+                <!-- Notes Textarea -->
+                <label for="notes">Additional Notes (Anime character, color scheme, special requests, etc.):</label>
+                <textarea id="notes" name="notes" rows="4" placeholder="Describe any additional details here"></textarea>
+        
+                <button type="submit" class="submit-button">Submit Customization</button>
+            </form>
+        </section>
+        
+        <script>
+            function updatePrice() {
+                let total = 0;
+                const components = document.querySelectorAll('select');
+                components.forEach(component => {
+                    const price = parseFloat(component.selectedOptions[0].getAttribute('data-price'));
+                    if (!isNaN(price)) {
+                        total += price;
+                    }
+                });
+                document.getElementById('estimatedPrice').textContent = total.toFixed(2);
+            }
+        </script>
+        
+
+        <!-- Payment and Queue Information Section -->
+        <section class="payment-info">
+            <h2>Here's the Plan</h2>
+            <p>Once you submit your customization options, we’ll add it to our review queue. We’ll review the order to get a feel for what you’re looking for, and if we are ready to start building, we’ll send you an estimate detailing the cost. If it all makes sense to you, then we'll ask for payment.</p>
+            <p>Right now, we're only using PayPal (see the <a href="questions.html">Questions?</a> page). All fully paid designs will be moved to the build queue in the order of recieved payments. Both queues are worked from top down.</p>
+
+                <h2>Make It Personal</h2>
+                <p>If you (or the lucky recipient) have a favorite anime character (or any character you love), let us know! We'll add a custom design to your case with a stencil, paint, or whatever medium suits it best. This might even help set the right color scheme, and is our way of making your build truly one-of-a-kind!</p>
+                <p></p>
+        </section>
+        
+        <section id="testimonials" class="testimonials">
+            <h2>What Our (Fake) Customers Say</h2>
+            <h2 style="font-size: small;">We don't have real ones yet..I'd love to add yours though!</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-slide active">
+                    <p>"The Gaming Beast build exceeded my expectations! I can stream and game at 4K with no issues."</p>
+                    <p>- Alex G. Price</p>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"nips customized my PC exactly how I wanted it. Great communication and quality work!"</p>
+                    <p>- James Olivander.</p>
+                </div>
+                <div class="testimonial-slide">
+                    <p>"This was my first custom PC, and the whole process was smooth and straightforward. Highly recommend!"</p>
+                    <p>- person from Montana</p>
+                </div>
+            </div>
+            <button class="carousel-button prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="carousel-button next" onclick="changeSlide(1)">&#10095;</button>
+        </section>
+        
+        <!-- Personal Touch Section -->
+        <div class="personal-touch">
+            <p>Your payment will be processed securely via PayPal. Once completed, we'll confirm your order and provide updates as we work on your build.</p>
+        </div>
+
+        <!-- Insert your PayPal button code here -->
+            <div style="text-align: center; margin: 20px 0;">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display: inline-block;">
+                    <input type="hidden" name="cmd" value="_s-xclick" />
+                    <input type="hidden" name="hosted_button_id" value="T4E3PCFWPSJ8W" />
+                    <table style="margin: 0 auto;">
+                        <tr>
+                            <td>
+                                <input type="hidden" name="on0" value="Any final thoughts?"/>
+                                Any final thoughts?
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" name="os0" maxlength="200" style="width: 100%; padding: 5px;" />
+                            </td>
+                        </tr>
+                    </table>
+                    <input type="hidden" name="currency_code" value="USD" />
+                    <button type="submit" style="border: none; background: none; cursor: pointer; padding: 10px;">
+                        <img src="paypalbutton.png" alt="Pay Now with PayPal" style="max-width: 150px; height: auto; transition: transform 0.3s;">
+                    </button>
+                </form>
+            </div>
+
+     <footer style="align-content: space-evenly;">
+        <p>Have questions? Email us at <a href="mailto:hitmeup@austinmiller.net">hitmeup@austinmiller.net</a></p>
+    </footer>   
+    </div>
+
+    <script type="text/javascript">
+        let currentSlide = 0;
+
+        function changeSlide(direction) {
+            const slides = document.querySelectorAll('.testimonial-slide');
+            slides[currentSlide].classList.remove('active');
+
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+    </script>
+
+    
+
+</body>
+</html>
