@@ -23,6 +23,10 @@ header p {
     color: #cccccc; /* Light gray to complement the header */
 }
 
+.container p {
+    margin-bottom: 1.5em;
+}
+
 /* Enhanced Header Styling */
 header.custom {
     position: relative;

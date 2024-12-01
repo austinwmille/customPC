@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="custom no-bg">
+        <h1>Payment</h1>
+        <p>Proceed to finalize your custom PC order.</p>
+    </header>
+    <div class="container">
+        <p style="text-align: center;">Once your design is approved, you can proceed with the payment below.</p>
+        <div style="text-align: center; margin: 20px 0;">
+            <div id="payment-section" style="display: none;">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display: inline-block;">
+                    <input type="hidden" name="cmd" value="_s-xclick" />
+                    <input type="hidden" name="hosted_button_id" value="T4E3PCFWPSJ8W" />
+                    <table style="margin: 0 auto;">
+                        <tr>
+                            <td>
+                                <input type="hidden" name="on0" value="Any final thoughts?"/>
+                                Any final thoughts?
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="text" name="os0" maxlength="200" style="width: 100%; padding: 5px;" />
+                            </td>
+                        </tr>
+                    </table>
+                    <input type="hidden" name="currency_code" value="USD" />
+                    <button type="submit" style="border: none; background: none; cursor: pointer; padding: 10px;">
+                        <img src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" alt="Pay Now with PayPal" style="max-width: 150px; height: auto; transition: transform 0.3s;">
+                    </button>
+                </form>
+            </div>
+            <p id="approval-message" style="text-align: center; color: #ff9b29;">Your design is pending approval. Please wait for confirmation.</p>
+        </div>
+
+        <script>
+            // Pre-approved tokens (replace with real backend logic)
+            const approvedTokens = ['dolphin', 'hummingbird']; // Example tokens
+
+            // Extract token from query string
+            const urlParams = new URLSearchParams(window.location.search);
+            const token = urlParams.get('token');
+
+            // Validate token
+            if (approvedTokens.includes(token)) {
+                document.getElementById('payment-section').style.display = 'block';
+                document.getElementById('approval-message').style.display = 'none';
+            }
+        </script>
+
+    <footer>
+        <p>Have questions? <a href="mailto:hitmeup@austinmiller.net">Contact us</a>.</p>
+    </footer>
+</body>
+</html>
