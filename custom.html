@@ -8,6 +8,7 @@
 
     <title>Custom PC Builds</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
 </head>
 <body>
     <nav class="navbar">
@@ -34,17 +35,20 @@
                 <!-- CPU Dropdown -->
                 <label for="cpu">CPU:</label>
                 <select id="cpu" name="cpu">
-                    <option value="Intel i5" data-price="150">Intel i5 - $150</option>
-                    <option value="Intel i7" data-price="250">Intel i7 - $250</option>
-                    <option value="AMD Ryzen 5" data-price="180">AMD Ryzen 5 - $180</option>
-                    <option value="AMD Ryzen 7" data-price="280">AMD Ryzen 7 - $280</option>
-                    <option value="AMD Ryzen 9" data-price="400">AMD Ryzen 9 - $400</option>
+                    <option value="Intel i5" data-price="220">Intel i5 - $220</option>
+                    <option value="Intel i7" data-price="330">Intel i7 - $330</option>
+                    <option value="Intel i9" data-price="440">Intel i9 - $440</option>
+                    <option value="The Best Intel" data-price="450">The Best Intel - $450</option>
+                    <option value="AMD Ryzen 5" data-price="200">AMD Ryzen 5 - $200</option>
+                    <option value="AMD Ryzen 7" data-price="270">AMD Ryzen 7 - $270</option>
+                    <option value="AMD Ryzen 9" data-price="340">AMD Ryzen 9 - $340</option>
+                    <option value="The Best AMD" data-price="600">The Best AMD - $600</option>
                 </select>
         
                 <!-- RAM Dropdown -->
                 <label for="ram">RAM:</label>
                 <select id="ram" name="ram">
-                    <option value="16GB" data-price="60">16GB - $60</option>
+                    <option value="16GB" data-price="70">16GB - $70</option>
                     <option value="32GB" data-price="120">32GB - $120</option>
                     <option value="64GB" data-price="200">64GB - $200</option>
                 </select>
@@ -52,34 +56,39 @@
                 <!-- Graphics Card Dropdown -->
                 <label for="gpu">Graphics Card:</label>
                 <select id="gpu" name="gpu">
-                    <option value="NVIDIA GTX 1660" data-price="250">NVIDIA GTX 1660 - $250</option>
-                    <option value="NVIDIA RTX 3060" data-price="350">NVIDIA RTX 3060 - $350</option>
-                    <option value="NVIDIA RTX 3080" data-price="700">NVIDIA RTX 3080 - $700</option>
+                    <option value="NVIDIA GTX 1660" data-price="240">NVIDIA GTX 1660 - $240</option>
+                    <option value="NVIDIA RTX 3060" data-price="320">NVIDIA RTX 3060 - $320</option>
+                    <option value="NVIDIA RTX 3080" data-price="500">NVIDIA RTX 3080 - $500</option>
+                    <option value="NVIDIA RTX 4070 Ti Super" data-price="850">NVIDIA RTX 4070 Ti Super - $850</option>
                 </select>
         
                 <!-- Storage Dropdown -->
                 <label for="storage">Storage:</label>
                 <select id="storage" name="storage">
-                    <option value="512GB SSD" data-price="50">512GB SSD - $50</option>
-                    <option value="1TB SSD" data-price="100">1TB SSD - $100</option>
-                    <option value="2TB SSD" data-price="180">2TB SSD - $180</option>
+                    <option value="1TB SSD" data-price="100">1TB SSD - $80</option>
+                    <option value="2TB SSD" data-price="180">2TB SSD - $160</option>
+                    <option value="2TB SSD" data-price="480">Samsung 4TB SSD - $480</option>
                 </select>
         
                 <!-- Case Dropdown -->
                 <label for="case">Case and Color:</label>
                 <select id="case" name="case">
-                    <option value="Black Mid-Tower" data-price="70">Black Mid-Tower - $70</option>
-                    <option value="White Mid-Tower" data-price="80">White Mid-Tower - $80</option>
-                    <option value="RGB Glass Case" data-price="120">RGB Glass Case - $120</option>
-                    <option value="Minimalistic Black" data-price="90">Minimalistic Black - $90</option>
-                    <option value="Sleek Silver" data-price="100">Sleek Silver - $100</option>
+                    <option value="Black Mid-Tower" data-price="100">Simple Mid-Tower - $100</option>
+                    <option value="White Mid-Tower" data-price="120">RGB Mid-Tower - $120</option>
+                    <option value="White Mid-Tower" data-price="270">Black Full-Tower - $270</option>
+                    <option value="RGB Glass Case" data-price="180">RGB Mid-Tower, Glass - $180</option>
+                    <option value="Minimalistic Black" data-price="90">Minimalistic - $90</option>
+                    <option value="We Pick a Unique One" data-price="180">Less Common, but Cool Looking - $180</option>
                 </select>
         
                 <!-- Estimated Price Display -->
                 <div style="margin-top: 20px; font-weight: bold; font-size: 1.2em; color: #ffb347;">
-                    Estimated MAX Price: $<span id="estimatedPrice">0</span>
+                    Estimated MAX Price (Includes $400 Flat Fee): $<span id="estimatedPrice">over 9000</span>
                 </div>
-        
+                <p style="font-size: 0.9em; color: #cccccc;">
+                    This fee covers the motherboard, shipping, taxes, the <a href="https://www.microsoft.com/en-us/d/windows-11-home/dg7gmgf0krt0?rtc=1">Windows OS license</a>, fans, cords, and other costs to ensure your PC arrives safely and on time. Our goal is simplicity, so this is the MAX price. It helps provide you a realistic estimate so there are no surprises when you get the official email!  
+                </p>
+                        
                 <!-- Notes Textarea -->
                 <label for="notes">Additional Notes (Anime character, color scheme, special requests, etc.):</label>
                 <textarea id="notes" name="notes" rows="4" placeholder="Describe any additional details here"></textarea>
@@ -90,7 +99,9 @@
         
         <script>
             function updatePrice() {
-                let total = 0;
+                const flatFee = 400; // Flat rate to cover shipping, taxes, and overhead
+                let total = flatFee; // Start with the flat fee
+
                 const components = document.querySelectorAll('select');
                 components.forEach(component => {
                     const price = parseFloat(component.selectedOptions[0].getAttribute('data-price'));
@@ -98,10 +109,15 @@
                         total += price;
                     }
                 });
+
                 document.getElementById('estimatedPrice').textContent = total.toFixed(2);
             }
         </script>
         
+        <section class="payment-overview">
+            <h3>Payment Overview</h3>
+            <p>No hidden fees or surprises! We provide a transparent estimate, and you pay securely via PayPal. We’ll take care of everything else, including purchasing parts, assembly, and shipping.</p>
+        </section>
 
         <!-- Payment and Queue Information Section -->
         <section class="payment-info">
