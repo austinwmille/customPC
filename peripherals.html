@@ -97,9 +97,20 @@
         <p>Incidentally, prices and product availability are subject to change. Custom builds are non-refundable after payment.</p>
     </footer>
     <footer>
-        <p>Have questions? Contact us at <a href="mailto:nipssolutions@gmail.com">nipssolutions@gmail.com</a></p>
+        <p>Have questions? Contact us at <a href="mailto:nipssolutions@gmail.com" id="emailShare">nipssolutions@gmail.com</a></p>
         <p>&copy; 2024 nips's Custom PCs. All rights reserved.</p>
     </footer>
+
+<script type="text/javascript">
+    document.getElementById('emailShare').addEventListener('click', function () {
+    snaptr('track', 'SHARE', {
+        method: 'email', // Indicates the sharing method
+        user_email: '__INSERT_USER_EMAIL__', // Replace dynamically if available
+    });
+    console.log('Snap SHARE event fired for email');
+});
+
+</script>
 
 </body>
 </html>

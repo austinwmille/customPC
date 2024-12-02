@@ -24,6 +24,15 @@
             page_category: 'home',
             page_name: 'index'
         });
+
+        const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.has('ad_click')) {
+    snaptr('track', 'AD_CLICK', {
+        uuid_c1: urlParams.get('ad_click'),
+    });
+}
+
+
         </script>
         <!-- End Snap Pixel Code -->
 </head>
@@ -79,7 +88,18 @@
     </div>
 
     <footer>
-        <p>Have questions? Email us at <a href="mailto:nipssolutions@gmail.com">nipssolutions@gmail.com</a></p>
+        <p>Have questions? Email us at <a href="mailto:nipssolutions@gmail.com" id="emailShare">nipssolutions@gmail.com</a></p>
     </footer>
+
+    <script type="text/javascript">
+        document.getElementById('emailShare').addEventListener('click', function () {
+    snaptr('track', 'SHARE', {
+        method: 'email', // Indicates the sharing method
+        user_email: '__INSERT_USER_EMAIL__', // Replace dynamically if available
+    });
+    console.log('Snap SHARE event fired for email');
+});
+
+    </script>
 </body>
 </html>

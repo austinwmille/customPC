@@ -50,6 +50,16 @@
         <strong>Monitor, mouse, and keyboard NOT INCLUDED IN PRICE.</strong> 
         Check out our <a href="peripherals.html">Peripherals Page</a> for recommended accessories. OR, just let us know in your email if you need a whole package and we'll see what we can do! We're pretty reasonable people, and will be up-front as much as reasonably possible.
     </p>
+
+<script type="text/javascript">
+    snaptr('track', 'VIEW_CONTENT', {
+    item_ids: ['Gaming_Beast', 'Workstation_Pro', 'Budget_Friendly'],
+    item_category: 'Recommended Builds',
+});
+
+</script>
+
+
         <div class="price-tiers">
             <div class="tier">
                 <h3>Budget Friendly</h3>
@@ -114,5 +124,18 @@
     <footer>
         <p>Have questions? Email us at <a href="mailto:nipssolutions@gmail.com">nipssolutions@gmail.com</a></p>
     </footer>
+
+
+    <script type="text/javascript">
+        document.getElementById('emailShare').addEventListener('click', function () {
+    snaptr('track', 'SHARE', {
+        method: 'email', // Indicates the sharing method
+        user_email: '__INSERT_USER_EMAIL__', // Replace dynamically if available
+    });
+    console.log('Snap SHARE event fired for email');
+});
+
+    </script>
+
 </body>
 </html>

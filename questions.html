@@ -99,7 +99,7 @@
 
         <section>
             <h2>Still Have Questions?</h2>
-            <form action="mailto:nipssolutions@gmail.com" method="post" enctype="text/plain">
+            <form action="mailto:nipssolutions@gmail.com" method="post" enctype="text/plain" id="emailShare">
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required>
 
@@ -114,8 +114,26 @@
         </section>
     </div>
 
+document.querySelector('a[href^="mailto"]').addEventListener('click', function () {
+    snaptr('track', 'SHARE', {
+        user_email: '__INSERT_USER_EMAIL__', // Replace dynamically if available
+    });
+});
+
     <footer>
-        <p>Have more questions? Email us at <a href="mailto:nipssolutions@gmail.com">nipssolutions@gmail.com</a></p>
+        <p>Have more questions? Email us at <a href="mailto:nipssolutions@gmail.com" id="emailShare">nipssolutions@gmail.com</a></p>
     </footer>
+
+    <script type="text/javascript">
+        document.getElementById('emailShare').addEventListener('click', function () {
+    snaptr('track', 'SHARE', {
+        method: 'email', // Indicates the sharing method
+        user_email: '__INSERT_USER_EMAIL__', // Replace dynamically if available
+    });
+    console.log('Snap SHARE event fired for email');
+});
+
+    </script>
+
 </body>
 </html>
