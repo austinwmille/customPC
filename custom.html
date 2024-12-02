@@ -9,6 +9,28 @@
     <title>Custom PC Builds</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="icon" href="favicon.png" type="image/x-icon">
+
+    <!-- Snap Pixel Code -->
+        <script type='text/javascript'>
+        (function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function()
+        {a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};
+        a.queue=[];var s='script';r=t.createElement(s);r.async=!0;
+        r.src=n;var u=t.getElementsByTagName(s)[0];
+        u.parentNode.insertBefore(r,u);})(window,document,
+        'https://sc-static.net/scevent.min.js');
+
+        snaptr('init', '85a32f50-5224-45f8-b4e9-d82be5697a49', {
+        'user_email': '__INSERT_USER_EMAIL__'
+        });
+
+        snaptr('track', 'PAGE_VIEW', {
+            page_category: 'customize',
+            page_name: 'custom'
+        });
+
+        </script>
+        <!-- End Snap Pixel Code -->
+
 </head>
 <body>
     <nav class="navbar">
@@ -92,7 +114,28 @@
                 <!-- Notes Textarea -->
                 <label for="notes">Additional Notes (Anime character, color scheme, special requests, etc.):</label>
                 <textarea id="notes" name="notes" rows="4" placeholder="Describe any additional details here"></textarea>
-        
+                
+
+<script type="text/javascript">
+    document.querySelector('form').addEventListener('submit', function () {
+        const selectedCPU = document.querySelector('#cpu').value;
+        const selectedRAM = document.querySelector('#ram').value;
+        const selectedGPU = document.querySelector('#gpu').value;
+        const totalPrice = document.getElementById('estimatedPrice').textContent;
+
+        snaptr('track', 'ADD_CART', {
+            item_id: 'Custom_PC_Build',
+            cpu: selectedCPU,
+            ram: selectedRAM,
+            gpu: selectedGPU,
+            price: totalPrice
+        });
+    });
+
+</script>
+                
+
+
                 <button type="submit" class="submit-button">Submit Customization</button>
             </form>
         </section>
