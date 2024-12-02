@@ -121,7 +121,7 @@ section {
 /* Buttons */
 .link-button {
     display: inline-block;
-    background-color: #444;
+    background-color: #555;
     color: #ffffff;
     padding: 15px 30px;
     margin: 10px; /* Space between buttons */
@@ -213,6 +213,7 @@ button img:hover {
 }
 
 /* Testimonials Navigation Buttons */
+/* Fix for overlapping arrows in the testimonials section */
 .carousel-button {
     position: absolute;
     top: 50%;
@@ -221,30 +222,67 @@ button img:hover {
     border: 2px solid #ccc;
     font-size: 1.5em;
     cursor: pointer;
-    color: #333; /* Button text color */
+    color: #333;
     padding: 10px;
     border-radius: 50%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* Ensure arrows are above other elements */
 }
+
 
 .carousel-button:hover {
     background: #e8e8eb; /* Matches the site’s light grey accents */
 }
 
 .carousel-button.prev {
-    left: -50px;
+    left: -40px;
 }
 
 .carousel-button.next {
-    right: -50px;
+    right: -40px;
 }
 
 @media (max-width: 768px) {
     .carousel-button {
-        left: 10px;
-        right: 10px;
+        top: 90%; /* Move buttons below the card */
+        transform: none;
+        margin: 0 10px; /* Add spacing between buttons */
+    }
+
+    .carousel-button.prev {
+        left: 30%;
+        right: auto;
+    }
+
+    .carousel-button.next {
+        right: 30%;
+        left: auto;
+    }
+
+    .testimonial-slide {
+        padding: 20px; /* Adjust padding for smaller screens */
+        font-size: 1em; /* Reduce text size */
+    }
+
+    .carousel-button {
+        bottom: 10px; /* Place below the testimonial */
+    }
+
+    .carousel-button.prev {
+        left: auto; /* Reset position */
+    }
+
+    .carousel-button.next {
+        right: auto; /* Reset position */
+    }
+
+    .testimonial-carousel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
+
 
 .builds {
     display: flex;
@@ -452,9 +490,10 @@ button img:hover {
 }
 
 .payment-summary {
-    margin-top: 40px;
-    margin-bottom: 20px;
+    padding: 20px 15px; /* Adjust padding for mobile */
+    margin: 20px auto;
 }
+
 
 .payment-summary .link-button {
     display: inline-block;
@@ -522,3 +561,124 @@ button img:hover {
     margin: 0 auto;
     padding: 20px;
 }
+
+@media (max-width: 768px) {
+    /* General Section Spacing */
+    section {
+        margin: 20px auto; /* Reduce margins for compact screens */
+        padding: 15px;
+    }
+
+    /* Container Adjustments */
+    .container {
+        padding: 15px;
+        max-width: 90%; /* Reduce max width on smaller screens */
+    }
+
+    /* Reduce Header Padding */
+    header.custom {
+        padding: 50px 15px;
+    }
+
+    /* Testimonial Cards Adjustments */
+    .testimonial-slide {
+        font-size: 1em; /* Slightly smaller text for mobile */
+        padding: 15px;
+    }
+
+    /* Navigation Bar Links */
+    .navbar a {
+        padding: 10px;
+        font-size: 0.9em; /* Slightly smaller font */
+    }
+
+    /* Price Tier Cards */
+    .tier {
+        width: 100%; /* Make tiers stack vertically */
+        margin-bottom: 15px;
+    }
+
+    /* Footer Text */
+    footer {
+        font-size: 0.9em; /* Slightly smaller font */
+    }
+}
+
+.payment-summary .link-button {
+    width: 90%; /* Make it larger for touch */
+    max-width: 300px; /* Prevent it from being too wide */
+    margin: 15px auto; /* Center align */
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.5em; /* Slightly smaller headers */
+    }
+
+    p {
+        font-size: 0.9em; /* Reduce body text size */
+    }
+}
+
+/* Contact Form Styling */
+form {
+    display: flex;
+    flex-direction: column; /* Stack fields vertically */
+    gap: 15px; /* Add consistent spacing between form elements */
+    align-items: flex-start; /* Align form fields to the left */
+    margin-top: 20px; /* Space between the header and the form */
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: #ddd;
+    font-size: 1em;
+}
+
+form input[type="text"],
+form input[type="email"] {
+    margin-right: 0; /* Remove inline spacing */
+}
+
+form textarea {
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+form button {
+    align-self: center; /* Center the button */
+    padding: 10px 20px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background-color: #ff9b29;
+    transform: scale(1.05);
+}
+
+/* Adjust for Smaller Screens */
+@media (max-width: 768px) {
+    form {
+        width: 100%; /* Ensure the form takes full width */
+        padding: 0 15px; /* Add padding for mobile screens */
+    }
+
+    form button {
+        width: 90%; /* Make the button easier to tap */
+    }
+}
+
