@@ -357,6 +357,8 @@ button img:hover {
 
     header.custom {
         padding: 50px 20px;
+        background-size: contain; /* Makes the image fit smaller screens */
+        height: auto;
     }
 
     header.custom h1 {
