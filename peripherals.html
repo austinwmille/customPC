@@ -46,15 +46,15 @@
         <div class="product-category">
             <h2>Monitors</h2>
             <p class="product">
-                <a href="https://amzn.to/4idumLK">LG 27" UltraGear 4K UHD (3840x2160) Gaming Monitor</a>
+                <a href="https://amzn.to/4idumLK" class="affiliate-link">LG 27" UltraGear 4K UHD (3840x2160) Gaming Monitor</a>
                 <p>4k, Flat, IPS, $400. Put simply, if you are getting your recommendations from this page, then you don't need a monitor better than this one. Respectable brand; we love it.</p>
             </p>
             <p class="product">
-                <a href="https://amzn.to/3B9NgCx">GTEK 240Hz Gaming Monitor</a>
+                <a href="https://amzn.to/3B9NgCx" class="affiliate-link">GTEK 240Hz Gaming Monitor</a>
                 <p>1080p, Curved, VA Panel, $175. Just a solid monitor with standard features for pretty low cost. If we had to choose one today, this would be on the list of considerations.</p>
             </p>
             <p class="product">
-                <a href="https://amzn.to/4iphmmu">Sceptre New 27-inch Gaming Monitor</a>
+                <a href="https://amzn.to/4iphmmu" class="affiliate-link">Sceptre New 27-inch Gaming Monitor</a>
                 <p>1080p, Flat, LCD, $120. There is almost always a Sceptre monitor on our currently recommended list. This is the current cheapest option that we enjoy using, here.</p>
             </p>
         </div>
@@ -62,15 +62,15 @@
             <h2>Keyboards</h2>
             <p>Personally, we find keyboard recommendations to be very difficult. Just as a prolific writer has their preferred pen, a techie will have their preferred keyboard. That said, below are three GOOD choices that fit a wide range of budgets.</p>
             <p class="product">
-                <a href="https://amzn.to/3ZtKuBA">Corsair K70 RGB PRO Wired Mechanical Gaming Keyboard</a>
+                <a href="https://amzn.to/3ZtKuBA" class="affiliate-link">Corsair K70 RGB PRO Wired Mechanical Gaming Keyboard</a>
                 <p>RGB, Wired, $170. If you want an RGB keyboard that's been battle-tested, well, we believe that this is the best starting point.</p>
             </p>
             <p class="product">
-                <a href="https://amzn.to/3VcKFic">Redragon K668 RGB Gaming Keyboard</a>
+                <a href="https://amzn.to/3VcKFic" class="affiliate-link">Redragon K668 RGB Gaming Keyboard</a>
                 <p>RGB, Wired, $60. We like Redragon here, so this cheap option is sure to last you years.</p>
             </p>
             <p class="product">
-                <a href="https://amzn.to/49dZgj0">Logitech G PRO Mechanical Gaming Keyboard</a>
+                <a href="https://amzn.to/49dZgj0" class="affiliate-link">Logitech G PRO Mechanical Gaming Keyboard</a>
                 <p>RGB, Wired, $130. One of the oldest players in the peripheral space, Logitech makes incredibly reliable hardware. This super sleek, compact design is very, very pretty.</p>
             </p>
         </div>
@@ -78,15 +78,15 @@
             <h2>Mice</h2>
             <p>Literally any computer mouse is fine! Buy one that looks cool for like $20-$30 and you'll be fine (Logitech is a good brand choice). If you disagree, then we understand, but you probably aren't our target audience. Below are strong choices for gamers, daily work, and a casual blend of the two (in that order!)</p>
             <p class="product">
-                <a href="https://amzn.to/3Zv8Lac">Logitech G502 Hero - Gaming Mouse</a>
+                <a href="https://amzn.to/3Zv8Lac" class="affiliate-link">Logitech G502 Hero - Gaming Mouse</a>
                 <p>Wired, Lightweight, 25K DPI, $35. This Esports-tested gaming mouse is currently $35! It is a strong and solid contender even at its normal price of $80. With this deal, though, if you need a gaming mouse you should definitely buy this.</p>
             </p>
             <p class="product">
-                <a href="https://amzn.to/49bKaux">Logitech MX Master 3S</a>
+                <a href="https://amzn.to/49bKaux" class="affiliate-link">Logitech MX Master 3S</a>
                 <p>Bluetooth, Weighted, 8K DPI, $100. This mouse is a bit on the heavy side, and not made for gaming. It feels premium, though, and if you don't game then you'll use it for a decade.</p>
             </p>
             <p class="product">
-                <a href="https://amzn.to/3VfBSMe">Razer DeathAdder Essential Gaming Mouse</a>
+                <a href="https://amzn.to/3VfBSMe" class="affiliate-link">Razer DeathAdder Essential Gaming Mouse</a>
                 <p>Wired, $30. In our opinion, if you don't know what mouse to buy..well, don't pay more for one than this. It's very good, and a classic.</p>
             </p>
         </div>
@@ -100,6 +100,19 @@
         <p>Have questions? Contact us at <a href="mailto:nipssolutions@gmail.com" id="emailShare">nipssolutions@gmail.com</a></p>
         <p>&copy; 2024 nips's Custom PCs. All rights reserved.</p>
     </footer>
+
+<script type="text/javascript">
+    document.querySelectorAll('.affiliate-link').forEach(link => {
+        link.addEventListener('click', function () {
+            snaptr('track', 'CLICK', {
+                method: 'affiliate',
+                item_name: link.textContent.trim(),
+                destination_url: link.href
+            });
+            console.log('Snap CLICK event fired for', link.textContent.trim());
+        });
+    });
+</script>
 
 <script type="text/javascript">
     document.getElementById('emailShare').addEventListener('click', function () {
